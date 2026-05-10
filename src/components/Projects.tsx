@@ -1,3 +1,5 @@
+'use client'
+
 import { projects } from '@/data/content'
 
 const badgeStyles: Record<string, { bg: string; color: string }> = {

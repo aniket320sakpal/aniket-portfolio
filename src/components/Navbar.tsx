@@ -4,9 +4,8 @@ import { useState, useEffect } from 'react'
 const links = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Research', href: '#research' },
+  { label: 'Skills', href: '#skills' },
 ]
 
 export default function Navbar() {
@@ -34,7 +33,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <a
-        href="#hero"
+        href="#about"
         style={{
           fontFamily: 'Lora, Georgia, serif',
           fontSize: '1.1rem',
@@ -84,7 +83,7 @@ export default function Navbar() {
             onMouseEnter={(e) => ((e.target as HTMLElement).style.background = '#215C42')}
             onMouseLeave={(e) => ((e.target as HTMLElement).style.background = '#2D6A4F')}
           >
-            Hire me
+            Contact
           </a>
         </li>
       </ul>

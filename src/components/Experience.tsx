@@ -1,5 +1,18 @@
 import { experience } from '@/data/content'
 
+function Bold({ text }: { text: string }) {
+  const parts = text.split(/\*\*(.*?)\*\*/g)
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1
+          ? <strong key={i} style={{ color: '#3D3835', fontWeight: 500 }}>{part}</strong>
+          : <span key={i}>{part}</span>
+      )}
+    </>
+  )
+}
+
 export default function Experience() {
   return (
     <section
@@ -82,15 +95,27 @@ export default function Experience() {
 
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {job.bullets.map((b, bi) => (
-                  <li
-                    key={bi}
-                    style={{
+                  <li key={bi} style={{ marginBottom: b.sub && b.sub.length > 0 ? '12px' : '6px' }}>
+                    <div style={{
                       fontSize: '0.875rem', color: '#57534E', lineHeight: 1.7,
-                      paddingLeft: '16px', position: 'relative', marginBottom: '6px',
-                    }}
-                  >
-                    <span style={{ position: 'absolute', left: 0, color: '#52B788', fontSize: '0.8rem' }}>→</span>
-                    {b}
+                      paddingLeft: '16px', position: 'relative',
+                    }}>
+                      <span style={{ position: 'absolute', left: 0, color: '#52B788', fontSize: '0.8rem', top: '4px' }}>→</span>
+                      <Bold text={b.text} />
+                    </div>
+                    {b.sub && b.sub.length > 0 && (
+                      <ul style={{ listStyle: 'none', padding: 0, margin: '6px 0 0 28px' }}>
+                        {b.sub.map((s, si) => (
+                          <li key={si} style={{
+                            fontSize: '0.82rem', color: '#78716C', lineHeight: 1.65,
+                            paddingLeft: '14px', position: 'relative', marginBottom: '4px',
+                          }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#C4BDB3', fontSize: '0.8rem', top: '4px' }}>→</span>
+                            <Bold text={s} />
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>

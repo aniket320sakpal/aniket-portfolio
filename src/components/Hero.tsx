@@ -1,18 +1,16 @@
 'use client'
-import { stats } from '@/data/content'
 
 export default function Hero() {
   return (
     <section
       id="hero"
       style={{
-        minHeight: '100vh',
+        minHeight: '80vh',
         padding: 'calc(68px + 80px) 6% 80px',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '64px',
-        alignItems: 'center',
-        maxWidth: '1200px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        maxWidth: '900px',
         margin: '0 auto',
       }}
     >
@@ -83,6 +81,23 @@ export default function Hero() {
             View experience
           </a>
           <a
+            href="/docs/aniket-sakpal-resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              padding: '13px 26px', borderRadius: '8px',
+              background: 'transparent', color: '#1C1917',
+              border: '1.5px solid #E7E0D5',
+              fontWeight: 500, fontSize: '0.9rem', textDecoration: 'none',
+              transition: 'all 0.2s',
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#2D6A4F'; (e.currentTarget as HTMLElement).style.color = '#2D6A4F' }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#E7E0D5'; (e.currentTarget as HTMLElement).style.color = '#1C1917' }}
+          >
+            Download Resume
+          </a>
+          <a
             href="http://www.aitado.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -99,80 +114,6 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats */}
-        <div style={{ display: 'flex', gap: '36px', flexWrap: 'wrap' }}>
-          {stats.map((s) => (
-            <div key={s.label}>
-              <div style={{
-                fontFamily: 'Lora, Georgia, serif',
-                fontSize: '2rem', fontWeight: 600, color: '#1C1917', lineHeight: 1,
-              }}>
-                {s.num.replace('+', '')}<span style={{ color: '#2D6A4F' }}>{s.num.includes('+') ? '+' : ''}</span>
-              </div>
-              <div style={{ fontSize: '0.78rem', color: '#A8A29E', marginTop: '3px' }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Right — info cards */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'fadeUp 0.7s 0.15s ease both' }}>
-        {[
-          {
-            label: 'Latest role',
-            title: 'ML Scientist — Agentic & Multimodal AI',
-            desc: 'Expedia Group · Building production AI copilots, knowledge-graph RAG, and patented video generation systems.',
-            badge: '⚙ Present',
-            badgeColor: '#2D6A4F', badgeBg: '#D8F3DC',
-          },
-          {
-            label: 'Startup founder',
-            title: 'Aitado — AI Learning Co-pilot',
-            desc: 'Co-founded platform transforming documents into interactive notebooks with Socratic audio, adaptive quizzes & multi-agent RAG.',
-            badge: '🌐 aitado.com',
-            badgeColor: '#B7791F', badgeBg: '#FEF3C7',
-          },
-          {
-            label: 'Education',
-            title: 'M.S. Data Science — Carnegie Mellon University',
-            desc: 'Deep Learning · Distributed Systems · A/B Testing · ML Deployment · Graph Theory',
-            badge: null,
-            badgeColor: '', badgeBg: '',
-          },
-        ].map((card) => (
-          <div
-            key={card.title}
-            style={{
-              background: '#fff',
-              border: '1px solid #E7E0D5',
-              borderRadius: '12px',
-              padding: '22px 26px',
-              transition: 'transform 0.25s, box-shadow 0.25s',
-              cursor: 'default',
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'
-              ;(e.currentTarget as HTMLElement).style.boxShadow = '0 10px 28px rgba(0,0,0,0.07)'
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = 'none'
-              ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
-            }}
-          >
-            <div style={{ fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '7px' }}>{card.label}</div>
-            <div style={{ fontFamily: 'Lora, Georgia, serif', fontSize: '1rem', fontWeight: 600, color: '#1C1917', marginBottom: '5px' }}>{card.title}</div>
-            <div style={{ fontSize: '0.84rem', color: '#57534E', lineHeight: 1.55 }}>{card.desc}</div>
-            {card.badge && (
-              <span style={{
-                display: 'inline-block', marginTop: '10px',
-                background: card.badgeBg, color: card.badgeColor,
-                fontSize: '0.72rem', fontWeight: 500, padding: '3px 10px', borderRadius: '100px',
-              }}>
-                {card.badge}
-              </span>
-            )}
-          </div>
-        ))}
       </div>
 
       <style>{`

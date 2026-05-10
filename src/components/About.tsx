@@ -1,26 +1,17 @@
 'use client'
 
+const stats = [
+  { num: '10+', label: 'Years in ML', sub: 'Fortune 100 → startup' },
+  { num: '2', label: 'U.S. Patents', sub: 'AI & Agentic Systems' },
+  { num: '$7M+', label: 'Revenue Uplift', sub: 'Deployed at scale' },
+]
+
 const highlights = [
-  {
-    icon: '🏆',
-    title: 'U.S. Patent — AI Hallucination Detection',
-    desc: 'Multi-step Vision-LLM reasoning with object-mask tracking, structural consistency checks, and temporal cross-attention validation.',
-  },
-  {
-    icon: '🏆',
-    title: 'U.S. Patent — Agentic Video Systems',
-    desc: 'Autonomous image-to-video pipeline making Expedia the first travel company to deploy AI-generated videos at scale.',
-  },
-  {
-    icon: '🎓',
-    title: 'Carnegie Mellon University',
-    desc: 'M.S. in Data Science — Deep Learning, Distributed Systems, A/B Testing, ML Deployment, Graph Theory.',
-  },
-  {
-    icon: '📍',
-    title: 'Based in Austin, TX · Open to USA-wide roles',
-    desc: 'Currently at Expedia Group. Consistently rated top performer with highest-band reviews.',
-  },
+  { icon: '🏆', text: '2× U.S. Patent holder in AI hallucination detection & agentic video systems' },
+  { icon: '🎓', text: 'M.S. Data Science — Carnegie Mellon University' },
+  { icon: '🏢', text: 'ML Scientist at Expedia Group · Top performer, highest-band reviews' },
+  { icon: '🚀', text: <>Co-founder of <a href="http://www.aitado.com" target="_blank" rel="noopener noreferrer" style={{ color: '#2D6A4F', textDecoration: 'none', fontWeight: 500 }}>Aitado ↗</a> — AI learning platform with multi-agent architecture</> },
+  { icon: '📈', text: '$7M+ revenue uplift from patented AI video system deployed across travel' },
 ]
 
 export default function About() {
@@ -28,103 +19,145 @@ export default function About() {
     <section
       id="about"
       style={{
-        background: '#fff',
-        borderTop: '1px solid #E7E0D5',
-        borderBottom: '1px solid #E7E0D5',
-        padding: '100px 6%',
+        minHeight: '100vh',
+        padding: 'calc(68px + 60px) 6% 60px',
+        display: 'flex',
+        alignItems: 'center',
+        boxSizing: 'border-box',
+        background: '#FDFAF7',
       }}
     >
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <div style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2D6A4F', marginBottom: '12px' }}>
-          About me
-        </div>
-        <h2 style={{
-          fontFamily: 'Lora, Georgia, serif',
-          fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
-          fontWeight: 600, letterSpacing: '-0.02em', color: '#1C1917',
-          marginBottom: '56px', lineHeight: 1.2,
+      <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1.1fr 1fr',
+          gap: '80px',
+          alignItems: 'center',
+          animation: 'fadeUp 0.7s ease forwards',
         }}>
-          A decade of ML,<br />from insight to impact
-        </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '72px', alignItems: 'start' }}>
-          {/* Bio */}
+          {/* Left — narrative */}
           <div>
-            {[
-              <>I'm Aniket — a Machine Learning Scientist who has spent 10 years at the intersection of <strong style={{ color: '#1C1917', fontWeight: 500 }}>research and production engineering</strong>. My work spans LLM-powered agentic systems, causal inference, large-scale search & ranking, and multimodal AI.</>,
-              <>At Expedia, I've led development of AI systems that genuinely ship — from a patented image-to-video pipeline that generated <strong style={{ color: '#1C1917', fontWeight: 500 }}>$7M+ in marketing uplift</strong> across 10,000+ hotel properties, to an analytics copilot with a tiered memory architecture and knowledge-graph RAG.</>,
-              <>Outside Expedia, I co-founded <strong style={{ color: '#1C1917', fontWeight: 500 }}>Aitado</strong>, an AI learning platform that turns any document into a rich, interactive learning experience — Socratic dialogue, video explainers, and adaptive quizzes powered by multi-agent RAG.</>,
-              <>I hold two U.S. patents in <strong style={{ color: '#1C1917', fontWeight: 500 }}>AI Hallucination Detection</strong> and <strong style={{ color: '#1C1917', fontWeight: 500 }}>Agentic Systems</strong>, and I was consistently rated a top performer at Expedia Group.</>,
-            ].map((text, i) => (
-              <p key={i} style={{ fontSize: '0.95rem', color: '#57534E', lineHeight: 1.8, marginBottom: '16px' }}>
-                {text}
-              </p>
-            ))}
+            <h1 style={{
+              fontFamily: 'Lora, Georgia, serif',
+              fontWeight: 600, lineHeight: 1.2,
+              letterSpacing: '-0.02em', color: '#1C1917',
+              marginBottom: '24px',
+            }}>
+              <span style={{ display: 'block', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#78716C', fontWeight: 400, marginBottom: '8px', letterSpacing: '-0.01em' }}>
+                Hi, I'm{' '}
+                <span style={{ color: '#1C1917', fontWeight: 600 }}>Aniket Sakpal</span>
+              </span>
+              <span style={{ display: 'block', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)' }}>
+                I build AI Agents that<br />
+                <em style={{ fontStyle: 'italic', color: '#2D6A4F' }}>reason, create</em> & take action
+              </span>
+            </h1>
 
-            <div style={{ display: 'flex', gap: '10px', marginTop: '28px', flexWrap: 'wrap' }}>
-              {[
-                { label: '🔗 LinkedIn', href: 'https://www.linkedin.com/in/aniket-sakpal/' },
-                { label: '🚀 Aitado', href: 'http://www.aitado.com' },
-                { label: '✉ Email me', href: 'mailto:aniket17sakpal@gmail.com' },
-              ].map((l) => (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '6px',
-                    padding: '9px 16px', borderRadius: '8px',
-                    fontSize: '0.85rem', fontWeight: 500,
-                    color: '#57534E', border: '1.5px solid #E7E0D5', textDecoration: 'none',
-                    transition: 'all 0.2s',
-                    background: 'transparent',
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = '#2D6A4F'
-                    ;(e.currentTarget as HTMLElement).style.color = '#2D6A4F'
-                    ;(e.currentTarget as HTMLElement).style.background = '#D8F3DC'
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = '#E7E0D5'
-                    ;(e.currentTarget as HTMLElement).style.color = '#57534E'
-                    ;(e.currentTarget as HTMLElement).style.background = 'transparent'
-                  }}
-                >
-                  {l.label}
-                </a>
-              ))}
+            <p style={{ fontSize: '0.97rem', color: '#57534E', lineHeight: 1.8, marginBottom: '20px', maxWidth: '520px' }}>
+              I design the <strong style={{ color: '#1C1917', fontWeight: 500 }}>reasoning loops, memory architectures, and tool systems</strong> that make LLM agents reliable in production — at Expedia Group and through my own startups.
+            </p>
+
+
+            {/* CTAs */}
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <a
+                href="#contact"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  padding: '12px 24px', borderRadius: '8px',
+                  background: '#2D6A4F', color: '#fff',
+                  fontWeight: 500, fontSize: '0.9rem', textDecoration: 'none',
+                  transition: 'all 0.2s',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#215C42'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = '#2D6A4F'; (e.currentTarget as HTMLElement).style.transform = 'none' }}
+              >
+                Get in touch ↗
+              </a>
+              <a
+                href="/docs/aniket-sakpal-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  padding: '12px 24px', borderRadius: '8px',
+                  background: 'transparent', color: '#1C1917',
+                  border: '1.5px solid #E7E0D5',
+                  fontWeight: 500, fontSize: '0.9rem', textDecoration: 'none',
+                  transition: 'all 0.2s',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#2D6A4F'; (e.currentTarget as HTMLElement).style.color = '#2D6A4F' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#E7E0D5'; (e.currentTarget as HTMLElement).style.color = '#1C1917' }}
+              >
+                Download Resume
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aniket-sakpal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  padding: '12px 24px', borderRadius: '8px',
+                  background: 'transparent', color: '#1C1917',
+                  border: '1.5px solid #E7E0D5',
+                  fontWeight: 500, fontSize: '0.9rem', textDecoration: 'none',
+                  transition: 'all 0.2s',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#2D6A4F'; (e.currentTarget as HTMLElement).style.color = '#2D6A4F' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#E7E0D5'; (e.currentTarget as HTMLElement).style.color = '#1C1917' }}
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
 
-          {/* Highlights */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            {highlights.map((h) => (
-              <div
-                key={h.title}
-                style={{
-                  background: '#F7F4EF',
-                  border: '1px solid #E7E0D5',
-                  borderLeft: '3px solid #2D6A4F',
-                  borderRadius: '10px',
-                  padding: '18px 20px',
-                }}
-              >
-                <div style={{ fontSize: '0.9rem', fontWeight: 500, color: '#1C1917', marginBottom: '5px' }}>
-                  {h.icon} {h.title}
+          {/* Right — proof */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {/* Stat row */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+              {stats.map((s) => (
+                <div key={s.label} style={{
+                  background: '#fff', border: '1px solid #E7E0D5',
+                  borderRadius: '14px', padding: '18px 16px', textAlign: 'center',
+                }}>
+                  <div style={{
+                    fontFamily: 'Lora, Georgia, serif',
+                    fontSize: '1.7rem', fontWeight: 600, color: '#2D6A4F', lineHeight: 1, marginBottom: '4px',
+                  }}>
+                    {s.num}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 500, color: '#1C1917' }}>{s.label}</div>
+                  <div style={{ fontSize: '0.7rem', color: '#A8A29E', marginTop: '2px' }}>{s.sub}</div>
                 </div>
-                <div style={{ fontSize: '0.82rem', color: '#57534E', lineHeight: 1.55 }}>{h.desc}</div>
+              ))}
+            </div>
+
+            {/* Key career highlights */}
+            <div style={{
+              background: '#fff', border: '1px solid #E7E0D5',
+              borderRadius: '14px', padding: '22px 24px',
+            }}>
+              <div style={{
+                fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.08em',
+                textTransform: 'uppercase', color: '#2D6A4F', marginBottom: '16px',
+              }}>
+                Key Career Highlights
               </div>
-            ))}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {highlights.map((h) => (
+                  <div key={h.text} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                    <span style={{ fontSize: '0.95rem', flexShrink: 0, marginTop: '1px' }}>{h.icon}</span>
+                    <span style={{ fontSize: '0.83rem', color: '#57534E', lineHeight: 1.55 }}>{h.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          #about > div > div:last-child { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   )
 }

@@ -49,11 +49,27 @@ export const experience = [
     current: true,
     patent: true,
     bullets: [
-      'Built production-grade AI analytics copilot with adaptive reasoning loop — intent understanding, autonomous tool selection via ReAct, multimodal execution, and episodic history compaction.',
-      'Designed a declarative skill system with YAML-manifest-driven analytical workflows (metric diagnosis, root cause analysis) and hot-loading — eliminating LLM drift.',
-      'Built a tiered memory architecture — factual, episodic, and preference memories with vector compression, relevance decay, and attention-gated retrieval.',
-      'Developed knowledge-graph RAG pipeline retrieving context from MBR/WBR documents using KG expansion, custom embedding debiasing, query rewriting, and MMR-based reranking.',
-      'Built patented agentic image-to-video system — the first at scale in travel — delivering $7M+ uplift across 10,000+ hotel properties. Includes hallucination-detection engine, camera-motion detector, and autonomous regeneration loop.',
+      {
+        text: 'Built **production-grade AI analytics copilot** with adaptive reasoning loop — **ReAct** tool selection, multimodal execution, and episodic history compaction.',
+        sub: [
+          '**Declarative skill system** — YAML-manifest-driven workflows (metric diagnosis, root cause analysis) with hot-loading to eliminate LLM drift.',
+          '**Redis state management** — key-sharding, TTL policies, partial-state hydration for sub-second agent transitions.',
+          '**Tiered memory architecture** — factual, episodic, and preference memories with vector compression, relevance decay, and attention-gated retrieval.',
+          '**Context-engineering layer** — dynamic pruning, hierarchical chunk selection, and semantic routing to optimize LLM context windows.',
+          '**Knowledge graph RAG** — MBR/WBR retrieval via KG expansion, embedding debiasing, query rewriting, and MMR reranking.',
+          '**Production orchestration** — async FastAPI + Redis Streams on Kubernetes; Datadog APM + Langfuse LLM tracing.',
+        ],
+      },
+      {
+        text: 'Built **patented agentic image-to-video system** — first in travel at scale, delivering **$7M+ marketing uplift** across 10,000+ hotel properties.',
+        sub: [
+          '**Hallucination detection** — Vision-LLM reasoning, object-mask tracking, and temporal cross-attention validation.',
+          '**Camera-motion detector** — RAFT-style optical flow + custom video-embedding encoders to flag jitter and misaligned trajectories.',
+          '**Autonomous regeneration loop** — LLM-driven prompt optimization, shot-plan adjustments, and diffusion-model control tuning.',
+          '**Image-selection module** — fine-tuned YOLOv8 + CLIP dual-encoder on 1M+ images; LangGraph workflow for frame scoring and quality gating.',
+          '**Video upscalers** — 3D-UNet + latent-space SR transformers with GAN-based perceptual loss and motion-aware temporal consistency.',
+        ],
+      },
     ],
   },
   {
@@ -63,9 +79,13 @@ export const experience = [
     current: true,
     patent: false,
     bullets: [
-      'Built an AI learning co-pilot that transforms documents into interactive notebooks — explainer videos, Socratic audio dialogues, Q&A, and adaptive quizzes.',
-      'Designed multi-agent architecture coordinating RAG, code generation, visualization, evaluation, and TTS agents to create coherent, pedagogically structured learning modules.',
-      'Led back-end development and research on RL fine-tuning (GRPO/RLHF), multi-agent orchestration, and automated content-assembly pipelines.',
+      {
+        text: 'Built **AI learning co-pilot** transforming documents into interactive notebooks — explainer videos, Socratic audio, adaptive quizzes, and text Q&A.',
+        sub: [
+          '**Multi-agent architecture** — RAG, code generation, visualization, evaluation, and TTS agents coordinated for structured learning modules.',
+          '**RL fine-tuning** (GRPO/RLHF) and multi-agent orchestration powering scalable content-assembly pipelines.',
+        ],
+      },
     ],
   },
   {
@@ -75,10 +95,21 @@ export const experience = [
     current: false,
     patent: false,
     bullets: [
-      'Developed Search & Ranking Interpretation Framework using latent-class discrete choice models, causal inference, and ranking-explainability diagnostics.',
-      'Built latent-class choice models via custom EM algorithm to uncover heterogeneous customer segments and model substitution patterns.',
-      'Designed A/B testing infrastructure for Ranking ML models using interleaving methods (team draft / probabilistic) — achieving 10× acceleration in model iteration cycles.',
-      'Designed interpretable ranking metrics: qualified CTR, position-normalized engagement, and intent-aligned utility gains.',
+      {
+        text: 'Developed **Search & Ranking Interpretation Framework** — latent-class discrete choice models, causal inference, and ranking-explainability diagnostics.',
+        sub: [
+          '**Latent-class choice models** via custom EM algorithm — uncovered heterogeneous segments, utility functions, and substitution patterns driving conversion.',
+          '**Structural causal modeling** — instrumental variables, propensity weighting, and counterfactual estimators to isolate true booking drivers from bias.',
+          '**Ranking-evaluation layer** — NDCG, ERR, Shapley/IG attributions to diagnose where algorithmic ordering diverged from customer utility.',
+        ],
+      },
+      {
+        text: 'Owned **A/B testing infrastructure** for Ranking ML models — statistically rigorous, interpretable evaluation at scale.',
+        sub: [
+          '**Interleaving pipelines** (team draft / probabilistic) enabling **10× faster** model iteration with variance-reduced comparisons.',
+          '**Interpretable ranking metrics** — qualified CTR, position-normalized engagement, and intent-aligned utility gains.',
+        ],
+      },
     ],
   },
   {
@@ -88,8 +119,10 @@ export const experience = [
     current: false,
     patent: false,
     bullets: [
-      'Improved app rating from 3.1 → 3.7 by leading product analytics and UX experimentation.',
-      'Drove launch decisions for six major features; built funnel-conversion, marketing-effectiveness, and KPI alerting dashboards.',
+      {
+        text: 'Improved app rating **3.1 → 3.7** leading product analytics and UX experimentation — drove six major feature launches; built funnel-conversion, marketing-effectiveness, and KPI alerting dashboards.',
+        sub: [],
+      },
     ],
   },
   {
@@ -99,10 +132,11 @@ export const experience = [
     current: false,
     patent: false,
     bullets: [
-      'Led team of 5 delivering ML solutions for Fortune 100 CPG and Fortune 1 retail clients.',
-      'Reduced churn 11% → 8% using survival models (Cox PH, Weibull AFT) and clustering (k-means/GMM).',
-      'Improved lead conversion 26% → 29% via regularized logistic-regression scoring and uplift-based ranking.',
-      'Increased manufacturing uptime 86% → 92% with gradient-boosting failure detection and real-time scoring pipelines.',
+      { text: 'Led team of 5 delivering ML for **Fortune 100 CPG** and **Fortune 1 retailer** — predictive modeling, optimization, and large-scale analytics.', sub: [] },
+      { text: 'Reduced churn **11% → 8%** — survival models (Cox PH, Weibull AFT) + clustering (k-means/GMM) to identify high-risk segments.', sub: [] },
+      { text: 'Improved lead conversion **26% → 29%** — regularized logistic-regression scoring and uplift-based ranking of sales prospects.', sub: [] },
+      { text: 'Increased manufacturing uptime **86% → 92%** — gradient boosting failure detection and real-time scoring pipelines.', sub: [] },
+      { text: '**Marketing mix modeling** (MMM/ROI) and market-basket analysis via association-rule mining for strategic product placement.', sub: [] },
     ],
   },
 ]
@@ -144,28 +178,30 @@ export const projects = [
 
 export const blogPosts = [
   {
+    category: 'Recommender Systems',
+    readTime: 'Paper',
+    title: 'Bridging Choice Theory and Recommender Systems',
+    excerpt: 'Exploring the intersection of discrete choice models and modern recommender systems — applying latent-class demand modeling to uncover heterogeneous user preferences and substitution patterns.',
+    date: 'May 2025',
+    href: '/docs/bridging-choice-theory-recommender-systems.pdf',
+    coming: false,
+    status: 'Under Review · ACM RecSys 2026',
+  },
+  {
+    category: 'Computer Vision · GenAI',
+    readTime: 'Paper',
+    title: 'Image to Video Generation at Scale',
+    excerpt: 'How we built and deployed the first AI image-to-video system in travel at scale — covering hallucination detection, camera-motion analysis, and autonomous regeneration loops across 10,000+ properties.',
+    date: 'May 2025',
+    href: '/docs/image-to-video-generation-at-scale.pdf',
+    coming: false,
+    status: 'Under Review · ACM MM 2026',
+  },
+  {
     category: 'Agentic AI',
-    readTime: '8 min read',
+    readTime: 'Coming soon',
     title: 'Why most RAG pipelines fail in production — and how knowledge graphs fix it',
     excerpt: 'The gap between a RAG demo and a RAG system that answers business questions reliably is wider than most teams expect. Here\'s what I learned building one at Expedia.',
-    date: 'Coming soon',
-    href: '#',
-    coming: true,
-  },
-  {
-    category: 'ML Systems',
-    readTime: '6 min read',
-    title: 'The hidden cost of LLM drift in production analytical agents',
-    excerpt: 'When an LLM decides how to answer a metric question, small prompt variations create large output variance. A YAML-manifest skill system solved this for us.',
-    date: 'Coming soon',
-    href: '#',
-    coming: true,
-  },
-  {
-    category: 'Experimentation',
-    readTime: '10 min read',
-    title: 'Interleaving vs A/B testing for ranking models: a practical guide',
-    excerpt: 'How we achieved 10× faster model iteration at Expedia by moving from traditional A/B tests to probabilistic interleaving — and the tradeoffs that come with it.',
     date: 'Coming soon',
     href: '#',
     coming: true,

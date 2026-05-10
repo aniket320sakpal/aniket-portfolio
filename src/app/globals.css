@@ -46,5 +46,20 @@ body {
 }
 
 @media (max-width: 768px) {
-  #about > div > div { grid-template-columns: 1fr !important; gap: 40px !important; }
+  /* Navbar */
+  .nav-desktop { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+
+  /* About */
+  #about { padding: calc(68px + 40px) 5% 40px !important; }
+  #about > div > div { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* Sections */
+  #experience, #research, #skills, #contact { padding: 60px 5% !important; }
+
+  /* Experience timeline */
+  #experience .timeline-item { padding-left: 36px !important; }
+
+  /* Stats grid in About */
+  #about .stats-grid { grid-template-columns: repeat(3, 1fr) !important; }
 }

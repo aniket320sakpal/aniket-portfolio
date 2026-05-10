@@ -145,8 +145,8 @@ export default function About() {
                 Key Career Highlights
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {highlights.map((h) => (
-                  <div key={h.text} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                {highlights.map((h, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <span style={{ fontSize: '0.95rem', flexShrink: 0, marginTop: '1px' }}>{h.icon}</span>
                     <span style={{ fontSize: '0.83rem', color: '#57534E', lineHeight: 1.55 }}>{h.text}</span>
                   </div>

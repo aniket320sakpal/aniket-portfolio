@@ -29,6 +29,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+strong {
+  font-weight: inherit;
+}
+
 ::selection {
   background: var(--accent-light);
   color: var(--accent);

@@ -6,7 +6,7 @@ function Bold({ text }: { text: string }) {
     <>
       {parts.map((part, i) =>
         i % 2 === 1
-          ? <strong key={i} style={{ color: '#3D3835', fontWeight: 500 }}>{part}</strong>
+          ? <span key={i} style={{ color: '#3D3835', fontWeight: 500 }}>{part}</span>
           : <span key={i}>{part}</span>
       )}
     </>

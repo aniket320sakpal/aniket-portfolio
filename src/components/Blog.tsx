@@ -60,14 +60,6 @@ export default function Blog() {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
-                {!post.coming && (
-                  <span style={{
-                    fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
-                    color: '#B91C1C', background: '#FEE2E2', padding: '3px 9px', borderRadius: '100px',
-                  }}>
-                    📄 PDF Paper
-                  </span>
-                )}
                 <span style={{
                   fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase',
                   color: '#2D6A4F', background: '#D8F3DC', padding: '3px 9px', borderRadius: '100px',

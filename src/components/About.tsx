@@ -46,7 +46,7 @@ export default function About() {
             }}>
               <span style={{ display: 'block', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#78716C', fontWeight: 400, marginBottom: '8px', letterSpacing: '-0.01em' }}>
                 Hi, I'm{' '}
-                <span style={{ color: '#1C1917', fontWeight: 600 }}>Aniket Sakpal</span>
+                <span style={{ color: '#1C1917', fontWeight: 600, textDecoration: 'underline', textDecorationColor: '#2D6A4F', textUnderlineOffset: '4px' }}>Aniket Sakpal</span>
               </span>
               <span style={{ display: 'block', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)' }}>
                 I build AI Agents that<br />
@@ -60,55 +60,32 @@ export default function About() {
 
 
             {/* CTAs */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a
-                href="#contact"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  padding: '12px 24px', borderRadius: '8px',
-                  background: '#2D6A4F', color: '#fff',
-                  fontWeight: 500, fontSize: '0.9rem', textDecoration: 'none',
-                  transition: 'all 0.2s',
-                }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#215C42'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = '#2D6A4F'; (e.currentTarget as HTMLElement).style.transform = 'none' }}
-              >
-                Get in touch ↗
-              </a>
-              <a
-                href="/docs/aniket-sakpal-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  padding: '12px 24px', borderRadius: '8px',
-                  background: 'transparent', color: '#1C1917',
-                  border: '1.5px solid #E7E0D5',
-                  fontWeight: 500, fontSize: '0.9rem', textDecoration: 'none',
-                  transition: 'all 0.2s',
-                }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#2D6A4F'; (e.currentTarget as HTMLElement).style.color = '#2D6A4F' }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#E7E0D5'; (e.currentTarget as HTMLElement).style.color = '#1C1917' }}
-              >
-                Download Resume
-              </a>
-              <a
-                href="https://www.linkedin.com/in/aniket-sakpal/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  padding: '12px 24px', borderRadius: '8px',
-                  background: 'transparent', color: '#1C1917',
-                  border: '1.5px solid #E7E0D5',
-                  fontWeight: 500, fontSize: '0.9rem', textDecoration: 'none',
-                  transition: 'all 0.2s',
-                }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#2D6A4F'; (e.currentTarget as HTMLElement).style.color = '#2D6A4F' }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#E7E0D5'; (e.currentTarget as HTMLElement).style.color = '#1C1917' }}
-              >
-                LinkedIn
-              </a>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {[
+                { href: '#contact', label: '✉️ Get in touch', external: false },
+                { href: '/docs/aniket-sakpal-resume.pdf', label: '📄 Resume', external: true },
+                { href: 'https://www.linkedin.com/in/aniket-sakpal/', label: '🔗 LinkedIn', external: true },
+                { href: '#research', label: '🔬 My Research', external: false },
+              ].map((btn) => (
+                <a
+                  key={btn.href}
+                  href={btn.href}
+                  target={btn.external ? '_blank' : undefined}
+                  rel={btn.external ? 'noopener noreferrer' : undefined}
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '6px',
+                    padding: '8px 16px', borderRadius: '8px',
+                    background: 'transparent', color: '#57534E',
+                    border: '1.5px solid #E7E0D5',
+                    fontWeight: 500, fontSize: '0.82rem', textDecoration: 'none',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#2D6A4F'; (e.currentTarget as HTMLElement).style.color = '#2D6A4F' }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = '#E7E0D5'; (e.currentTarget as HTMLElement).style.color = '#57534E' }}
+                >
+                  {btn.label}
+                </a>
+              ))}
             </div>
           </div>
 

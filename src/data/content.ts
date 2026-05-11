@@ -195,6 +195,7 @@ export const blogPosts = [
     date: 'Dec 2025',
     href: '/docs/image-to-video-generation-at-scale.pdf',
     coming: false,
+    patent: true,
     status: 'Under Review · ACM MM 2026',
   },
   {

@@ -59,13 +59,21 @@ export default function Blog() {
                 ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
                 <span style={{
                   fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase',
                   color: '#2D6A4F', background: '#D8F3DC', padding: '3px 9px', borderRadius: '100px',
                 }}>
                   {post.category}
                 </span>
+                {'patent' in post && post.patent && (
+                  <span style={{
+                    fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.04em',
+                    color: '#B7791F', background: '#FEF3C7', padding: '3px 9px', borderRadius: '100px',
+                  }}>
+                    🏆 U.S. Patent
+                  </span>
+                )}
               </div>
 
               <div style={{

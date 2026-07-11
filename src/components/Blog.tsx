@@ -34,8 +34,8 @@ export default function Blog() {
             <a
               key={post.title}
               href={post.href}
-              target={post.coming ? undefined : '_blank'}
-              rel={post.coming ? undefined : 'noopener noreferrer'}
+              target={post.coming || ('linkPending' in post && post.linkPending) ? undefined : '_blank'}
+              rel={post.coming || ('linkPending' in post && post.linkPending) ? undefined : 'noopener noreferrer'}
               style={{
                 background: post.coming ? '#F7F4EF' : '#fff',
                 border: post.coming ? '1.5px dashed #D1CBC0' : '1.5px solid #2D6A4F22',
@@ -44,12 +44,12 @@ export default function Blog() {
                 textDecoration: 'none',
                 display: 'flex', flexDirection: 'column',
                 transition: 'transform 0.25s, box-shadow 0.25s',
-                cursor: post.coming ? 'default' : 'pointer',
+                cursor: post.coming ? 'default' : ('linkPending' in post && post.linkPending) ? 'default' : 'pointer',
                 opacity: post.coming ? 0.75 : 1,
               }}
-              onClick={(e) => post.coming && e.preventDefault()}
+              onClick={(e) => (post.coming || ('linkPending' in post && post.linkPending)) && e.preventDefault()}
               onMouseEnter={(e) => {
-                if (!post.coming) {
+                if (!post.coming && !('linkPending' in post && post.linkPending)) {
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'
                   ;(e.currentTarget as HTMLElement).style.boxShadow = '0 10px 28px rgba(45,106,79,0.1)'
                 }
@@ -109,6 +109,8 @@ export default function Blog() {
                 <span style={{ fontSize: '0.75rem', color: '#A8A29E' }}>{post.date}</span>
                 {post.coming ? (
                   <span style={{ fontSize: '0.72rem', color: '#A8A29E', fontStyle: 'italic' }}>Coming soon</span>
+                ) : 'linkPending' in post && post.linkPending ? (
+                  <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#2D6A4F' }}>Link coming soon</span>
                 ) : (
                   <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#2D6A4F' }}>Read Paper →</span>
                 )}

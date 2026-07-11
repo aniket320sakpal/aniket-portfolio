@@ -179,13 +179,12 @@ export const projects = [
 export const blogPosts = [
   {
     category: 'Recommender Systems',
-    readTime: 'Paper',
+    readTime: 'Coming soon',
     title: 'Bridging Choice Theory and Recommender Systems',
-    excerpt: 'Exploring the intersection of discrete choice models and modern recommender systems — applying latent-class demand modeling to uncover heterogeneous user preferences and substitution patterns.',
-    date: 'Apr 2024',
-    href: '/docs/bridging-choice-theory-recommender-systems.pdf',
-    coming: false,
-    status: 'Under Review · ACM RecSys 2026',
+    excerpt: 'Exploring the intersection of discrete choice models and modern recommender systems — applying latent-class demand modeling to uncover heterogeneous user preferences and substitution patterns. Paper will be linked shortly.',
+    date: 'Coming soon',
+    href: '#',
+    coming: true,
   },
   {
     category: 'Computer Vision · GenAI',
